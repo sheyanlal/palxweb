@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;500;600;700;800;900&display=fallback');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Additional styles */
+@import 'additional-styles/utility-patterns.css';
+@import 'additional-styles/range-slider.css';
+@import 'additional-styles/toggle-switch.css';
+@import 'additional-styles/theme.css';
+
+@import 'tailwindcss/utilities';
+
+/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
+@layer utilities {
+    .rtl {
+        direction: rtl;
+    }
+}
+
+.box {
+    margin: auto;
+    margin-top:-30px; 
+    min-height:200px;
+    
+}
+.searchbar {
+    background-color: #3b3b3b;
+    --tw-ring-shadow: 0 0 #aa0000 !important;
+    position: center;
+    font-size: 1.5rem;
+    font: Inter;
+    width: 500px;
+    height: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 10rem;
+    padding: 2rem;
+    transition: all .1s;
+    transition-delay: .1s;
+}
+.searchbar::placeholder {
+    color: white;
+    opacity: .5;
+}
+
+
+/* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
+[x-cloak=""] {
+    display: none;
+}
