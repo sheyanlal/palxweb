@@ -54,3 +54,32 @@
 [x-cloak=""] {
     display: none;
 }
+
+.searchbarbox{
+    background-color: #3b3b3b;
+    --tw-ring-shadow: 0 0 #aa0000 !important;
+    padding: 1rem;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 4px;
+    font-size: 16px;
+  }
+  
+  th {
+    background-color: rgb(146, 14, 14);
+    color: white;
+  }
+  
+  td {
+    background-color:#3b3b3b ;
+    color: white;
+  }
