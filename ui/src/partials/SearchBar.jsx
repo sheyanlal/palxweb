@@ -9,13 +9,9 @@ Chart.register(CategoryScale);
 
 function SearchBar({tasks}) {
 
-
     const [query, setQuery] = useState("")
 
     function simplify(){
-
-      const a = [];
-
 
       const a = [];
 
@@ -24,8 +20,6 @@ function SearchBar({tasks}) {
       }
       else{
         const things = tasks.filter(task => task.Area_name.toLowerCase().includes(query.toLowerCase())).sort()
-      if(things.length > 10){
-        return things.splice(1, 10);
       if(things.length > 10){
         return things.splice(1, 10);
       }
@@ -41,6 +35,10 @@ function SearchBar({tasks}) {
     const[chartTitle, setChartTitle] = useState("Example Chart for Nonexistent County")
 
     const[chartTitle2, setChartTitle2] = useState("Example Chart for Nonexistent County")
+    
+    const[chartTitle3, setChartTitle3] = useState("Example Chart for Nonexistent County")
+
+    const[chartTitle4, setChartTitle4] = useState("Example Chart for Nonexistent County")
 
 
     function simplify2(){
@@ -65,12 +63,12 @@ function SearchBar({tasks}) {
     function simplify3(){
 
       if (query === ''){
-        setChartTitle2("Example Unemployment Chart for Nonexistent County")
+        setChartTitle2("Example Unemployed Individuals Chart for Nonexistent County")
         return [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
        }
        else{
          const things = tasks.filter(task => task.Area_name.toLowerCase().includes(query.toLowerCase())).sort()
-         setChartTitle2("Unemployment Rate 2011-2020 of " + things[1].Area_name)
+         setChartTitle2("Unemploymen Rate 2011-2020 of " + things[1].Area_name)
        if(things.length > 10){
          return things.splice(1, 10).map((task) => task.Unemployment_Rate);
        }
@@ -80,6 +78,46 @@ function SearchBar({tasks}) {
        }
       
     }
+
+    function simplify4(){
+
+      if (query === ''){
+        setChartTitle3("Example Unemployed Individuals Chart for Nonexistent County")
+        return [200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000]
+       }
+       else{
+         const things = tasks.filter(task => task.Area_name.toLowerCase().includes(query.toLowerCase())).sort()
+         setChartTitle3("Unemployed Individuals 2011-2020 of " + things[1].Area_name)
+       if(things.length > 10){
+         return things.splice(1, 10).map((task) => task.Unemployed);
+       }
+       else{
+         return things.map((task) => task.Unemployed);
+       }
+       }
+      
+    }
+
+    function simplify5(){
+
+      if (query === ''){
+        setChartTitle4("Example Civilian Labor Force for Nonexistent County")
+        return [200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000]
+       }
+       else{
+         const things = tasks.filter(task => task.Area_name.toLowerCase().includes(query.toLowerCase())).sort()
+         setChartTitle4("Civilian Labor Force 2011-2020 of " + things[1].Area_name)
+       if(things.length > 10){
+         return things.splice(1, 10).map((task) => task.Civilian_labor_force);
+       }
+       else{
+         return things.map((task) => task.Civilian_labor_force);
+       }
+       }
+      
+    }
+
+    
 
 
     
@@ -127,6 +165,39 @@ const [chartData2, setChartData2] = useState({
   ]
 })
 
+const [chartData3, setChartData3] = useState({
+  labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+  // datasets is an array of objects where each object represents a set of data to display corresponding to the labels above. for brevity, we'll keep it at one object
+  datasets: [
+      {
+        label: 'Unemployed Individuals',
+        data: [200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000],
+        // you can set indiviual colors for each bar
+        pointBackgroundColor:'rgba(191, 15, 15, 0.6)',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        color: 'rgba(255, 255, 255, 0.6)',
+        borderColor: 'rgba(255, 255, 255, 0.6)',
+        borderWidth: 1,
+      }
+  ]
+})
+
+const [chartData4, setChartData4] = useState({
+  labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+  // datasets is an array of objects where each object represents a set of data to display corresponding to the labels above. for brevity, we'll keep it at one object
+  datasets: [
+      {
+        label: 'Civilian Labor Force',
+        data: [200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000],
+        // you can set indiviual colors for each bar
+        backgroundColor: 'rgba(191, 15, 15, 0.6)',
+        borderWidth: 1,
+      }
+  ]
+})
+
+
+
 
 
 
@@ -162,45 +233,29 @@ const [chartData2, setChartData2] = useState({
                   borderWidth: 1,
                 }
             ]
-          })}} ></input>
-          </div>
-            
-      <div className = "grid gap-10">
-
-      <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
-        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up"> 
-          <CountyChart chartData = {chartData} title = {chartTitle} />
-        </div>
-        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6" data-aos="fade-right">
-          <CountLineChart chartData={chartData2} title = {chartTitle2} />
-        <section className='grid gap-10'>
-          <div className='mx-auto items-center'>
-            <input type="text" maxLength="20" placeholder="Enter County Name" className = "searchbar"
-            onChange={event => {setQuery(event.target.value);  setChartData(
-              {
-                labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
-                // datasets is an array of objects where each object represents a set of data to display corresponding to the labels above. for brevity, we'll keep it at one object
-                datasets: [
-                    {
-                      label: 'Employed Individuals',
-                      data: simplify2(),
-                      // you can set indiviual colors for each bar
-                      backgroundColor: 'rgba(255, 255, 255, 0.6)',
-                      borderWidth: 1,
-                    }
-                ]
-          }
-          ); setChartData2({
+          }); setChartData3({
             labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
             // datasets is an array of objects where each object represents a set of data to display corresponding to the labels above. for brevity, we'll keep it at one object
             datasets: [
                 {
-                  label: 'Unemployment Rate',
-                  data: simplify3(),
+                  label: 'Unemployed Individuals',
+                  data: simplify4(),
                   // you can set indiviual colors for each bar
                   pointBackgroundColor:'rgba(191, 15, 15, 0.6)',
                   backgroundColor: 'rgba(255, 255, 255, 0.6)',
                   borderWidth: 1,
+                }
+            ]
+          }); setChartData4({
+            labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+            // datasets is an array of objects where each object represents a set of data to display corresponding to the labels above. for brevity, we'll keep it at one object
+            datasets: [
+                {
+                  label: 'Civilian Labor Force',
+                  data: simplify5(),
+                  // you can set indiviual colors for each bar
+                  backgroundColor: 'rgba(191, 15, 15, 0.6)',
+                  borderWidth: 1
                 }
             ]
           })}} ></input>
@@ -216,11 +271,13 @@ const [chartData2, setChartData2] = useState({
           <CountLineChart chartData={chartData2} title = {chartTitle2} />
         </div>
       </div>
-     
-
-
-       </div>
-        </section>
+      <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up"> 
+          <CountLineChart chartData={chartData3} title = {chartTitle3} />
+        </div>
+        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6" data-aos="fade-right">
+          <CountyChart chartData = {chartData4} title = {chartTitle4} />
+        </div>
       </div>
      
 
@@ -234,11 +291,6 @@ const [chartData2, setChartData2] = useState({
 }
 
 export default SearchBar;
-
-
-
-
-
 
 
 

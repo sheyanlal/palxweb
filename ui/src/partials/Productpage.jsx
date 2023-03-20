@@ -11,7 +11,6 @@ function Productpage(){
 
     useEffect(() => {
         getAllTransactions().then(transactions => {
-            console.log("got the transactions")
             setTransactions(transactions)
           });
       
@@ -24,26 +23,27 @@ function Productpage(){
   }, [])
   
     return(
-        <section>
             <div className="max-w-6xl mx-auto px-6 sm:px-6">
             <div className="py-12 md:py-20 border-t border-gray-800">
-        <div className="grid gap-15">
             {/* Section header */}
             <div className="max-w-3xl mx-auto text-center pb-14 md:pb-16">
-                <h1 className="h2 mb-4">GEN 1 Product Coming Soon...</h1>
-                <p className="text-xl text-gray-400">In the mean time, we have created a way for you to interact with our data and learn some cool things about how our economic-based model works!</p>
+                <h1 className="h1 mb-4">GEN 1 Product Coming Soon...</h1>
+                <p className="text-2xl text-gray-400">In the mean time, we have created a way for you to interact with our data and learn some cool things about how our economic-based model works!</p>
             </div>
-            <div>
+            <div className='productbucket shadow-2xl p-10 rounded-xl'>
             <div className="max-w-3xl mx-auto text-center pb-14 md:pb-16">
-                <h1 className="h2 mb-4">U.S. Counties Information</h1>
+                <h1 className="h3 mb-4">U.S. Counties Information</h1>
+                <p className="text-xl text-gray-400">In the mean time, we have created a way for you to interact with our data and learn some cool things about how our economic-based model works!</p>
             </div>
             <div>
                 <SearchBar tasks = {tasks}/>
             </div>
             </div>
-            <div>
+            <p className='pt-20'></p>
+            <div className='productbucket shadow-2xl p-10 rounded-xl'>
                 <div className="max-w-3xl mx-auto text-center pb-14 md:pb-16">
-                    <h1 className="h2 mb-4 pt-20">Ohio Business Economic Landscape Tool</h1>
+                    <h1 className="h3 mb-4 ">Ohio Business Economic Landscape Tool</h1>
+                    <p className="text-xl text-gray-400">In the mean time, we have created a way for you to interact with our data and learn some cool things about how our economic-based model works!</p>
                 </div>
                 <div>
                 <TransactionForm transactions={transactions} />
@@ -51,8 +51,6 @@ function Productpage(){
             </div>
         </div>
         </div>
-        </div>
-        </section>
     )
 }
 

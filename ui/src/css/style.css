@@ -95,7 +95,7 @@
 }
 
 .searchbarbox{
-    background-color: #3b3b3b;
+    background-color: rgb(59, 59, 59);
     --tw-ring-shadow: 0 0 #aa0000 !important;
     padding: 1rem;
 }
@@ -122,3 +122,11 @@ table {
     background-color:#3b3b3b ;
     color: white;
   }
+
+  .productbucket{
+    background-color: rgb(26, 27, 30);
+  }
+
+
+
+  

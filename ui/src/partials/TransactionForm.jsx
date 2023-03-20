@@ -76,28 +76,28 @@ function TransactionForm({transactions}) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-10">
 
-
-        <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
-        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-1 items-center">
+        
+        <div className="md:grid md:grid-cols-12 md:gap-6">
+        <div className="mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-1 items-center">
           <input className="searchbar2" type="text" name="city" placeholder="Enter City" {...register("city")} />
         </div>
-        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 items-center">
+        <div className="mx-auto md:col-span-6 lg:col-span-6 items-center">
           <input className="searchbar2" type="text" name="street" placeholder="Enter Street Address" {...register("street")} />
         </div>
         </div>
 
 
         <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
-        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-1">
+        <div className="mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-1 items-center">
           <input className="searchbar2" type="text" name="zipcode" placeholder="Enter Zip Code" {...register("zipcode")} />
         </div>
-        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6">
+        <div className="mx-auto md:col-span-6 lg:col-span-6 items-center">
           <input className="searchbar2" type="text" name="state" placeholder="Enter State" {...register("state")} />
         </div>
         </div>
 
         <div className="mx-auto items-center">
-          <button className = "submitbutton" type="submit">Submit</button>
+          <button className = "submitbutton" type="submit">Get Results</button>
         </div>
         </div>
       </form>
