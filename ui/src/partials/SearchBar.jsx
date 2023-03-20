@@ -68,7 +68,7 @@ function SearchBar({tasks}) {
        }
        else{
          const things = tasks.filter(task => task.Area_name.toLowerCase().includes(query.toLowerCase())).sort()
-         setChartTitle2("Unemploymen Rate 2011-2020 of " + things[1].Area_name)
+         setChartTitle2("Unemployment Rate 2011-2020 of " + things[1].Area_name)
        if(things.length > 10){
          return things.splice(1, 10).map((task) => task.Unemployment_Rate);
        }

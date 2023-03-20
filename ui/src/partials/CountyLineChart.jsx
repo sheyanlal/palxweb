@@ -13,7 +13,7 @@ function CountyLineChart({ chartData, title}) {
                 display: false
               }
             }
-          }}
+          } }
         />
       </div>
     );
