@@ -9,9 +9,13 @@ Chart.register(CategoryScale);
 
 function SearchBar({tasks}) {
 
+
     const [query, setQuery] = useState("")
 
     function simplify(){
+
+      const a = [];
+
 
       const a = [];
 
@@ -20,6 +24,8 @@ function SearchBar({tasks}) {
       }
       else{
         const things = tasks.filter(task => task.Area_name.toLowerCase().includes(query.toLowerCase())).sort()
+      if(things.length > 10){
+        return things.splice(1, 10);
       if(things.length > 10){
         return things.splice(1, 10);
       }
@@ -167,7 +173,54 @@ const [chartData2, setChartData2] = useState({
         </div>
         <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6" data-aos="fade-right">
           <CountLineChart chartData={chartData2} title = {chartTitle2} />
+        <section className='grid gap-10'>
+          <div className='mx-auto items-center'>
+            <input type="text" maxLength="20" placeholder="Enter County Name" className = "searchbar"
+            onChange={event => {setQuery(event.target.value);  setChartData(
+              {
+                labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+                // datasets is an array of objects where each object represents a set of data to display corresponding to the labels above. for brevity, we'll keep it at one object
+                datasets: [
+                    {
+                      label: 'Employed Individuals',
+                      data: simplify2(),
+                      // you can set indiviual colors for each bar
+                      backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                      borderWidth: 1,
+                    }
+                ]
+          }
+          ); setChartData2({
+            labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+            // datasets is an array of objects where each object represents a set of data to display corresponding to the labels above. for brevity, we'll keep it at one object
+            datasets: [
+                {
+                  label: 'Unemployment Rate',
+                  data: simplify3(),
+                  // you can set indiviual colors for each bar
+                  pointBackgroundColor:'rgba(191, 15, 15, 0.6)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                  borderWidth: 1,
+                }
+            ]
+          })}} ></input>
+          </div>
+            
+      <div className = "grid gap-10">
+
+      <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up"> 
+          <CountyChart chartData = {chartData} title = {chartTitle} />
         </div>
+        <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6" data-aos="fade-right">
+          <CountLineChart chartData={chartData2} title = {chartTitle2} />
+        </div>
+      </div>
+     
+
+
+       </div>
+        </section>
       </div>
      
 
@@ -181,6 +234,11 @@ const [chartData2, setChartData2] = useState({
 }
 
 export default SearchBar;
+
+
+
+
+
 
 
 
