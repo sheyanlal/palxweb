@@ -7,14 +7,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@syncfusion/ej2-react-charts": "^20.4.54",
     "@tailwindcss/forms": "^0.5.3",
     "aos": "^3.0.0-beta.6",
+    "chart.js": "^4.2.1",
+    "chartjs": "^0.3.24",
+    "google-map-react": "^2.2.0",
+    "google-maps-react-markers": "^1.1.7",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-geocode": "^0.2.3",
+    "react-google-maps": "^9.4.5",
+    "react-hook-form": "^7.43.7",
     "react-router-dom": "^6.9.0",
+    "react-simple-maps": "^3.0.0",
+    "react-sparklines": "^1.7.0",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
+    "@iconify/icons-mdi": "^1.2.44",
+    "@iconify/react": "^4.1.0",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",

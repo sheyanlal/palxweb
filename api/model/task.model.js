@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
 
-const taskSchema = new mongoose.Schema({ task: 'string', 
-                assignee: 'string', 
-                status: 'string', 
-                createDate: 'date', 
-                updatedDate: 'date', 
-                createdBy: 'string', 
-                updatedBy: 'string',
+const taskSchema = new mongoose.Schema({
                 FIPS_Code: 'number',
                 State: 'string',
                 Area_name: 'string',
@@ -15,8 +9,7 @@ const taskSchema = new mongoose.Schema({ task: 'string',
                 Employed: 'number',
                 Unemployed: 'number',
                 Unemployment_Rate: 'number' 
-                },
-                { timestamps: { createDate: 'created_at', updatedDate: 'updated_at'}});
+                });
 
 const Task = mongoose.model('generalCounties', taskSchema);
 

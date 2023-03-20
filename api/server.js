@@ -11,6 +11,7 @@ if(process.env.ENVIRONMENT !== 'production') {
 
 
 const taskController = require('./controller/task.controller')
+const transactionController = require('./controller/transaction.controller')
 
 
 
@@ -39,6 +40,10 @@ app.delete('/api/task/:id', (req, res) => {
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
+});
+
+app.get('/api/transactions', (req, res) => {
+    transactionController.getTransactions().then(data => res.json(data));
 });
 
 
