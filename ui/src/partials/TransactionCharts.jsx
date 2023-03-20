@@ -46,6 +46,7 @@ function TransactionCharts({transactions}){
         {
           label: "Number of Transactions",
           data: transactions.map((transaction) => transaction.raw_num_transactions),
+          backgroundColor: ["#F4364C", "#B80F0A", "#FF6347", "#7E2811", "#800000", "#7E191B", "#FF0800", "#FF2800", "#420D09", "#8D021F", "#933A16", "#B80F0A", "#AA0000", "#AA0000", "#D2122E", "#BA0021", "#FF033E", "#A52A2A", "#DB0007", "#C60C30", "#660000", "#B31B1B", "#58111A", "#FF7F50", "#893F45", "#801818", "#FF004F", "#E25822", "#733635", "#9D2933", "#DA614E", "#E62020", "#CF1020", "#C8102E", "#DA291C", "#F2003C", "#FF6961", "#860111", "#65000B", "#BC3F4A", "#CD5700", "#722F37", "#7B1113", "#C80815", "#FD0E35", "#E60026", "#A81C07", "#BD3039", "#701C1C", "#F40009"],
           borderColor: "white",
           borderWidth: 2
         }
