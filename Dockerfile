@@ -18,6 +18,6 @@ COPY --from=ui-build /usr/src/ui/dist .
 COPY --from=api-build /usr/src/api/dist .
 RUN ls
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["node", "api.bundle.js"]

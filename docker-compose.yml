@@ -22,7 +22,7 @@ services:
       context: ./api
       dockerfile: Dockerfile.dev
    ports:
-     - 3080:3080
+     - 8080:8080
    container_name: mern-api
    networks:
      - mern-stack-net
