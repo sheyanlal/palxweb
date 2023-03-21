@@ -13,7 +13,7 @@ RUN npm install
 # Copy rest of the code to container
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3080
 
 # Run the API on Nodemon
 CMD ["npm", "run", "dev"]
